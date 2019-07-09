@@ -1,0 +1,20 @@
+{
+  "name": "vscountryeditor",
+  "version": "1.0.0",
+  "description": "A simple UI for editing VS country data",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheCalebThornton/VSCountryJsonEditor.git"
+  },
+  "author": "TheCalebThornton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheCalebThornton/VSCountryJsonEditor/issues"
+  },
+  "homepage": "https://github.com/TheCalebThornton/VSCountryJsonEditor#readme",
+  "dependencies": {}
+}
