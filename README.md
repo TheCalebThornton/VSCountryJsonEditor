@@ -67,11 +67,15 @@ Simple HTML/JS webpage that will provide an easy to use UI for managing country 
 
 	Given I have an array of data  
 	When I type a value into the array search bar  
-	And click 'Search'  
 	Then I see a list of all the objects that have a matching property value  
 
 
-# FUTURE ACs - updating the schema
+# ACs Pending external work
+1. Load Countries Data  
+	When I load the app  
+	Then I expect the view to be hydrated with countries data from the settings URL  
+
+# Potential ACs - updating the schema
 1. Add a Property  
 	Given I have some data in the view  
 	When I view any level of the data  

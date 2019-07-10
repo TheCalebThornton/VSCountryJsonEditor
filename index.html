@@ -1,11 +1,25 @@
 <html>
 	<head>
 		<title>VS Country JSON Editor</title>
+		<link rel="stylesheet" type="text/css" href="src/assets/base.css">
+		<script src="src/index.js"></script>
 	</head>
 	<body>
 		<h1>VS Country JSON Editor</h1>
 
-		<input id="importJson" type="button" value="Import JSON"/>
-		<input id="exportJson" type="button" value="Export JSON"/>
+		<div class="head-controls">
+			<div class="left-controls">
+				<form action="/action_page.php">
+					<label class="file-input-label" for="jsonUploadInput">Upload a JSON file</label>
+					<input id="jsonUploadInput" type="file" name="pic" accept=".json">
+				</form>
+			</div>
+			<div class="right-controls">
+				<input id="jsonExportInput" type="button" value="Export JSON"/>
+			</div>
+		</div>
+		<div class="data-view">
+
+		</div>
 	</body>
 </html>
