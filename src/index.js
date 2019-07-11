@@ -1,3 +1,5 @@
+const jsonImporter = require("./json-importer/module.js");
+
 let jsonData = {},
 	elements = {};
 
@@ -10,30 +12,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	elements.jsonExport.addEventListener('click', exportJSON);
 });
 
-function isValidFile (file) {
-	// TODO validate file type and size
-	return true;
-}
-
 function importJSON (event) {
-	const file = event.target.files.length ? event.target.files[0] : false;
-
-	// TODO consider proper retrieval and validation
-	if (!isValidFile(file)) {
-		console.log("ERR: file is invalid!");
+	response = jsonImporter.importJSONFile(event.target.files);
+	if (response.error) {
+		// something bad happened; reset input
+		// TODO use jsonResponse.error.message to display UI error
+		console.error(response.error);
+		elements.jsonUploadEle.value = null;
 		return;
 	}
 
-	try {
-		let fileReader = new FileReader();
-		fileReader.onload = function(event) {
-			jsonData = JSON.parse(event.target.result);
-		};
-		fileReader.readAsText(file);
-	} catch (error) {
-		elements.jsonUploadEle.value = null;
-		console.log(`ERR: Could not read and parse JSON! ${error}`)
-	}
+	jsonData = response.data;
 }
 
 function exportJSON () {

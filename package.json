@@ -4,7 +4,10 @@
   "description": "A simple UI for editing VS country data",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node node_modules/jasmine/bin/jasmine.js spec/**/*spec.js",
+    "bundle": "rm -f bundle.js && node node_modules/browserify/bin/cmd src/index.js > bundle.js",
+    "serve:local": "node node_modules/http-server/bin/http-server -p8081",
+    "start": "npm run bundle && npm run serve:local"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,11 @@
     "url": "https://github.com/TheCalebThornton/VSCountryJsonEditor/issues"
   },
   "homepage": "https://github.com/TheCalebThornton/VSCountryJsonEditor#readme",
-  "dependencies": {}
+  "dependencies": {
+    "browserify": "^16.3.0",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.4.0"
+  }
 }

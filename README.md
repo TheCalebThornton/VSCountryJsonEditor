@@ -3,6 +3,14 @@ Simple HTML/JS webpage that will provide an easy to use UI for managing country 
 
 **WIP (Remove me after first release/tag)**
 
+# Get started:
+Start with the following commands:  
+npm i  
+npm start  
+
+npm start will run browserify and bundle the JS into one file.  
+Then http-server will start a local server (default localhost://8081).  
+
 # Acceptance Criteria:
 1. JSON Import  
 	Given I have an existing JSON file  
